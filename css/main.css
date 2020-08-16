@@ -1667,9 +1667,9 @@ pre .javascript .function {
 .post-block:last-of-type .post-eof {
   display: none;
 }
-.content {
+/* .content {
   padding-top: 40px;
-}
+} */
 @media (min-width: 992px) {
   .post-body {
     text-align: justify;
@@ -2150,9 +2150,9 @@ ul.breadcrumb li + li:last-child {
 .main-inner {
   padding-bottom: 60px;
 }
-.content {
+/* .content {
   padding-top: 70px;
-}
+} */
 @media (max-width: 767px) {
   .content {
     padding-top: 35px;
