@@ -94,7 +94,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Flyskea's Daily</h1>
+      <h1 class="site-title" id="hitokoto_text">Flyskea's Daily</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -551,7 +551,18 @@
 
 
 
-
+<script>
+  fetch('https://v1.hitokoto.cn?c=i')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      if(data.from_who)
+          hitokoto.innerText = data.hitokoto + '——' + data.from_who
+      else
+          hitokoto.innerText = data.hitokoto + '——' + '佚名'
+    })
+    .catch(console.error)
+</script>
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
   <script>
