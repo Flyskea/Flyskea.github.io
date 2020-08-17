@@ -97,12 +97,17 @@
       <h1 class="site-title">Flyskea's Daily</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">|首页</p>
   </div>
+
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
+
+
+
 
 <nav class="site-nav">
   <ul id="menu" class="menu">
@@ -126,6 +131,7 @@
 
 
 
+
 </div>
     </header>
 
@@ -145,7 +151,7 @@
             
       
   
-  <p id="hitokoto_text" style="text-align: center; margin: 2em; font-size: large;">:D 获取中...</p>
+  <p id="hitokoto_text">:D 获取中...</p>
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/16/%E7%9B%9B%E5%A4%8F/">
 
@@ -488,7 +494,10 @@
         <a href="https://github.com/flyskea" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;flyskea" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/Flyskea" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;Flyskea" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+        <a href="mailto:1696866717@qq.com" title="E-Mail → mailto:1696866717@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/5906196688" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5906196688" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
       </span>
   </div>
 
@@ -546,18 +555,18 @@
 
 
 
-<script>
-  fetch('https://v1.hitokoto.cn?c=i')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.getElementById('hitokoto_text')
-      if(data.from_who)
-          hitokoto.innerText = data.hitokoto + '——' + data.from_who
-      else
-          hitokoto.innerText = data.hitokoto + '——' + '佚名'
-    })
-    .catch(console.error)
-</script>
+  <script>
+    fetch('https://v1.hitokoto.cn?c=i')
+      .then(response => response.json())
+      .then(data => {
+        const hitokoto = document.getElementById('hitokoto_text')
+        if(data.from_who)
+            hitokoto.innerText = data.hitokoto + '——' + data.from_who
+        else
+            hitokoto.innerText = data.hitokoto + '——' + '佚名'
+      })
+      .catch(console.error)
+  </script>
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
   <script>
